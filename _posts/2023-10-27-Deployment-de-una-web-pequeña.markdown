@@ -1,7 +1,7 @@
 Estuve realizando una página web sencilla, que permita al personal de un hotel registrar las habitaciones ocupadas y al dueño revisar esta información y ver estadísticas de sus habitaciones e ingresos. 
 
 
-La aplicación la desarrollé usando NodeJS, Express como Framework, Passport.js para la autenticación y entre otras que usé para hashear las contraseñas o administrar los logs. 
+La aplicación la desarrollé usando NodeJS, Express como Framework, Passport.js para la autenticación y entre otras que usé para hashear las contraseñas y administrar los logs. 
 
 
 De base de datos en un inicio usé MySQL, pero luego hice el cambio a SQLite, ya que esta aplicación hará un uso muy pequeño de la base de datos y por lo tanto no necesito una herramienta tan potente como MySQL. 
@@ -18,7 +18,7 @@ El código de mi aplicación está en un repositorio de Github, por lo tanto des
 Los archivos delicados no están en GitHub, ellos los pasé de mi laptop al servidor usando `scp` junto con mi llave .pem para establecer una conexión segura con el servidor.
 
 
-Configuré también el grupo de seguridad de AWS para permitir las conexiones entrantes al server, abrí solo 3 puertos, el 22 para SSH, 80 para http y 443 para https. El puerto 80 se mantiene abierto solo por si algún cliente se conecta usando http, mi servidor web NGINX lo redirecciona al puerto 443 para poder establecer una conexión segura.
+Configuré también el grupo de seguridad de AWS para permitir las conexiones entrantes al server, abrí solo 3 puertos, el 22 para SSH, 80 para http y 443 para https. 
 
 
 Hice la instalación de todas las dependencias de NodeJS con `npm install`
@@ -32,6 +32,9 @@ Luego de investigar resulta que la mejor solución es usar un Proxy Server, como
 Configuré NGINX para que las solicitudes entrantes a esos puertos sean redireccionadas al puerto 5000 que es donde mi aplicación estaba escuchando. 
 
 
+El puerto 80 se mantiene abierto solo por si algún cliente se conecta usando http, NGINX lo redirecciona al puerto 443 para poder establecer una conexión segura.
+
+
 Cabe resaltar que usé Let's Encrypt para generar mi certificado SSL gratuitamente y poder tener conexiones HTTPS con mis clientes. 
 
 
@@ -41,7 +44,7 @@ Entre mi cliente y mi servidor se crea una conexión HTTPS y de NGINX a mi servi
 Cabe resaltar también que AWS tiene un servicio AWS Budgets que permite enviarte alertas cuando excedas costos. Definí el monto de dinero que al excederse AWS me informará.
 
 
-Hacer este proyecto fue interesante. Me permitió ver todo el flujo de trabajo desde recoger los requerimientos del funcionamiento de la página, la elección de la tecnología adecuada para el tamaño del proyecto, tener en cuenta la seguridad de la web desde el código, en la infraestructura y luego en el deployment. Por último los costos de poner en producción el código.
+Hacer este proyecto fue interesante. Me permitió ver todo el flujo de trabajo desde recoger los requerimientos del funcionamiento de la página, la elección de la tecnología adecuada para el tamaño del proyecto, tener en cuenta la seguridad de la web en el código, bases de datos, en la infraestructura y luego en el deployment. Por último los costos de poner en producción el código.
 
 
 
