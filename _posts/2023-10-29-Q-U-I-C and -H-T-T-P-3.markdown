@@ -1,6 +1,3 @@
-
-#UDP -> QUIC -> HTTP/3
-
 Instale Wireshark nuevamente.
 
 
