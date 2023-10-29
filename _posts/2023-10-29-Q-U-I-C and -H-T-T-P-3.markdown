@@ -19,10 +19,11 @@ Resulta que QUIC es un protocolo de la capa de transporte que se construye usand
 Al parecer sí, como TCP, pero mejor, porque es más rápido(casi siempre).
 
 
-Al parecer, tan bueno es QUIC que HTTP/3 a diferencia de HTTP/1 Y HTTP/2 dejará de usar TCP, para usar netamente QUIC.
+Al parecer, tan bueno es QUIC que HTTP/3 a diferencia de HTTP/1 Y HTTP/2 dejará de usar TCP, para usar netamente QUIC que está basado en UDP.
 
 
-Estuve averiguando sobre cómo implementar QUIC en mis servicios web, por suerte no tengo que cambiar el código de mi aplicación, ya que puedo usar NGINX para enviar vídeos usando QUIC y conectarme con mis clientes usando HTTP/3. 
+Estuve averiguando sobre cómo implementar QUIC en mis servicios web, por suerte no tengo que cambiar el código de mi aplicación, ya que puedo usar NGINX para enviar vídeos usando QUIC y conectarme con mis clientes usando HTTP/3.
+
 
 
 Seguiré explorando QUIC y HTTP/3.
